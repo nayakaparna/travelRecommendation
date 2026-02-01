@@ -1,0 +1,281 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Navbar Container */
+.navbar {
+    position: fixed;   /* This is the key! It removes the bar from the normal layout flow */
+    top: 0;
+    left: 0;
+    width: 100%;       /* Ensures it stays full width even when results appear */
+    z-index: 1000;     /* Keeps it layered on top of the images */
+    
+    /* Your existing styling */
+    background-color: #1a1d1d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+/* IMPORTANT: Add padding to the top of your body or main container 
+   so the top of your content isn't hidden behind the fixed navbar */
+body {
+    margin: 0;
+    padding: 0;
+    /* This ensures the background image stays fixed in place */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                      url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80');
+    
+    background-attachment: fixed; /* Keeps the image from moving down */
+    background-size: cover;       /* Ensures it fills the whole screen */
+    background-position: center;  /* Centers the image */
+    
+    min-height: 100vh;            /* Ensures it covers at least the full screen height */
+    overflow-x: hidden;           /* Prevents horizontal jumping */
+}
+
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+/* Image specific scaling */
+.logo-img {
+    height: 40px; /* Adjust this to fit your bar height */
+    width: auto;  /* Maintains aspect ratio */
+    display: block;
+}
+
+/* Nav Links Styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* White Search Bar Container */
+.search-container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 50px; /* Gives the pill shape */
+    width: 450px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    flex-grow: 1;
+    font-size: 0.9rem;
+    color: #4a7c7c;
+}
+
+.search-icon {
+    color: #4a7c7c;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* Buttons inside the search bar */
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 8px 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 5px;
+    color: white;
+    background-color: #006666; /* Teal color from image */
+}
+
+.btn:hover {
+    background-color: #004d4d;
+}
+
+/* Home Section Styling */
+.home {
+    height: 100vh; /* Adjusts height to fill most of the screen */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1600&q=80'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.home-content {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.home-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Social Media Icons Styling */
+.social-container {
+    /* 1. Change layout to vertical */
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+    
+    /* 2. Move to the side and fix it there */
+    position: fixed;   /* Keeps it in the same spot while scrolling */
+    left: 15px;        /* Distance from the left edge */
+    top: 50%;          /* Move down to the middle */
+    transform: translateY(-50%); /* Perfectly centers it vertically */
+    
+    /* 3. Ensure it stays visible */
+    padding: 10px;
+    z-index: 1000;     /* Keeps it above your background image */
+}
+
+.social-icon {
+    text-decoration: none;
+    font-size: 24px; /* Icon size */
+    color: white;    /* Icon color */
+    transition: transform 0.3s, color 0.3s;
+}
+
+/* Add a hover effect */
+.social-icon:hover {
+    color: #008080; /* Teal color */
+    transform: translateY(-5px); /* Moves icon up slightly when hovered */
+}
+
+/* Call to Action Button */
+.explore-btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    background-color: #006666;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #004d4d;
+}
+
+#resultContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    padding: 100px 40px 40px 0; /* Top padding keeps results below navbar */
+    gap: 30px;                 /* Adds the gap between cards */
+}
+
+.result-card {
+    width: 450px;           /* Adjust width so they fit nicely on the right */
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.result-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.result-item {
+    background: white;
+    width: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    /* Alternative to gap if you prefer margin */
+    /* margin-bottom: 30px; */
+}
+
+.result-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Container for the text inside the card */
+.result-text {
+    padding: 20px;       /* Adds space inside the card borders */
+    text-align: center;    /* Ensures text is neatly aligned */
+    background: white;   /* Keeps the text area clean */
+}
+
+/* Space between the Title and the Description */
+.result-text h3 {
+    margin: 0 0 10px 0;
+    text-align: center;   /* Adds 10px of space below the name */
+    color: #006666;      /* Professional travel theme color */
+}
+
+/* Space between the Description and the Button */
+.result-text p {
+    margin-bottom: 20px; /* Creates a gap before the 'Visit' button */
+    line-height: 1.5; 
+    text-align: center;    /* Makes the description easier to read */
+    color: #333;
+}
+
+/* Ensure the result item itself has a gap from the next one */
+.result-item {
+    margin-bottom: 30px; /* Creates space between the two result cards */
+    border-radius: 15px;
+    overflow: hidden;    /* Keeps images from spilling over rounded corners */
+}
+
+.visit-btn {
+    background-color: #006666;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.local-time {
+    color: #006666;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    font-style: italic;
+    background: #e0f2f2;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+}

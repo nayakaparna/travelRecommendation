@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Travel Lite</title>
+    <link rel="stylesheet" href="travel_recommendation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<body>
+
+<nav class="navbar">
+    <div class="logo">
+    <img src="logo.png" alt="TravelLite Logo" class="logo-img">
+    <span>Travel Lite</span>
+</div>
+
+    <ul class="nav-links">
+        <li><a href="travel_recommendation.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="search-container">
+    <input type="text" id="conditionInput" placeholder="Enter a destination or keyword">
+    <button id="btnSearch" class="btn search-btn">Search</button>
+    <button id="btnClear" class="btn clear-btn">Clear</button>
+    </div>
+
+
+</nav>
+<main>
+    <div id="resultContainer" class="results-display"></div>
+</main>
+<section class="home">
+    <div id="home-content-wrapper" class="home-content">
+        <h1>Welcome to Travel Lite</h1>
+        <p>Explore the world's most breathtaking destinations with us. From hidden gems to popular landmarks, we bring your travel dreams to life with curated experiences and expert guides.</p>
+        
+        <div class="social-container">
+        <a href="https://facebook.com" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://instagram.com" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://youtube.com" class="social-icon"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <button class="explore-btn">Start Exploring</button>
+    </div>
+</section>
+<script src="./travel_recommendation.js"></script>
+</body>
+</html>
